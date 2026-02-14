@@ -1,0 +1,103 @@
+-----------------------------------
+|INVESTIGACIÓN: ARREGLOS EN JAVA|
+-----------------------------------
+
+4.1 ¿Cómo se declara un arreglo en Java?
+
+Un arreglo en Java es una estructura de datos que almacena elementos del
+mismo tipo y tiene tamaño fijo
+
+1)  Declaración sin inicializar:
+
+    int valores[];
+
+Inicialización posterior:
+
+    valores = new int[5];
+    valores[0] = 23;
+
+2)  Declaración e inicialización directa:
+
+    int[] lista = {23, 75, 98};
+
+  ---------------------------------------------
+  4.2 Métodos principales de java.util.Arrays
+  ---------------------------------------------
+
+Importación: import java.util.Arrays;
+
+Ejemplo base: int[] numeros = {5, 2, 9, 1, 7};
+
+1)  Arrays.sort() Arrays.sort(numeros);
+
+2)  Arrays.binarySearch() int indice = Arrays.binarySearch(numeros, 9);
+
+3)  Arrays.copyOf() int[] copia = Arrays.copyOf(numeros,
+    numeros.length);
+
+4)  Arrays.fill() Arrays.fill(copia, 0);
+
+5)  Arrays.equals() boolean iguales = Arrays.equals(numeros, copia);
+
+6)  Arrays.toString() System.out.println(Arrays.toString(numeros));
+
+7)  Arrays.stream() Arrays.stream(numeros).forEach(n ->
+    System.out.println(n));
+
+  ---------------------------------------------
+  4.3 Como se recorren los arreglos en Java
+  ---------------------------------------------
+
+int[] valores = {5, 2, 9, 1, 7};
+
+1)  For de siempre: for (int i = 0; i < valores.length; i++) {
+    System.out.println(valores[i]); }
+
+2)  For-each: for (int val : valores) { System.out.println(val); } //Esta no sabia que existia
+
+3)  Streams: Arrays.stream(valores) .forEach(n ->
+    System.out.println(n));
+
+  -----------------------------------------
+  4.4 Diferencias entre Array y ArrayList
+  -----------------------------------------
+
+ARREGLOS (ARRAYS)
+
+Ejemplo: int[] numeros = {5, 2, 9, 1, 7};
+
+Características: - Tamaño fijo - Permite primitivos y objetos - Mayor
+rendimiento
+
+ARRAYLIST
+
+Importación: import java.util.ArrayList;
+
+Ejemplo: ArrayList numeros = new ArrayList<>(); numeros.add(24);
+numeros.add(2); numeros.add(32);
+
+Métodos principales: numeros.add(10); numeros.remove(0); numeros.get(1);
+numeros.set(1, 50); numeros.size(); numeros.contains(9);
+
+Diferencias clave:
+
+Tamaño: - Array: fijo - ArrayList: dinámico
+
+Tipos: - Array: primitivos y objetos - ArrayList: solo objetos
+
+Rendimiento: - Array: más rápido - ArrayList: ligeramente más lento por
+boxing/unboxing
+
+ --------------------------
+   Cuando usar cada uno
+ --------------------------
+
+El array es mas eficiente pero esta limitado a como se declara, que quiere decir,
+pues si se sabes cuantos elementos necesitas, entoces esta es tu mejor opcion,
+ya ofrece un mejor rendimiento y funciona muy bien con muchos datos numericos.
+
+En cambio arraylist se usa cuando no sabes cuantos elementos tendra la lista, y sus
+metodos tiene un mejor control que el array normal. y por ultimo, esta tiene
+mejor facilidad de uso, aunque sea un poco mas lenta.
+
+
